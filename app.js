@@ -1,11 +1,17 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const app = express();
-const port = 3000; // You can change this to any available port you prefer
+const port = 3001; // You can change this to any available port you prefer
 
 const users = [];
 const JWT_SECRET = "goK!pusp6ThEdURUtRenOwUhAsWUCLheBazl!uJLPlS8EbreWLdrupIwabRAsiBu";
 app.use(express.json());
+app.use(cors({
+    origin:'https://elensolassignment.web.app',
+    methods:'GET,POST,PUT,DELETE,HEAD,PATCH',
+    credentials:true
+}));
 
 
 
